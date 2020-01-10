@@ -1,3 +1,5 @@
+In prod : biblio-limoges.mohamed-mourabit.com/ 
+
 # tp2
 * create data base with use of info in env file
 php bin/console doctrine:database:create 
