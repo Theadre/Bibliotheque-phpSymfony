@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Catalogue{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau catalogue</h1>
+
+    {{ include('catalogue/_form.html.twig') }}
+
+    <a href="{{ path('catalogue_index') }}">retour à la liste</a>
+{% endblock %} 

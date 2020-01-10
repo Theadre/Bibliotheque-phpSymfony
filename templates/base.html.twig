@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <title>
+            {% block title %}Welcome!
+            {% endblock %}
+        </title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% include 'navbar.html.twig' %}
+        {# <p id="color">test color</p> #}
+        <div class="container"> 
+            {{app.user.roles[0]}}
+            {% block body %}{% endblock %}
+        </div>
+
+
+        
+        <script src="/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+
+        {% block javascripts %}{% endblock %}
+        
+        <script>
+            {# $('#color').css('background-color') = 'red'
+            $('#color').css('background') = 'red' #}
+            $('#color').css({backgroundColor: 'red'});
+            {# console.log($('#color').css('background')); #}
+            {# $.alert('fefefef') #}
+        </script>
+        </body>
+    </html>

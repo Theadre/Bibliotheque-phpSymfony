@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue index{% endblock %}
+
+{% block body %}
+    <h1>Catalogue index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for catalogue in catalogues %}
+            <tr>
+                <td>{{ catalogue.id }}</td>
+                <td>{{ catalogue.nom }}</td>
+                <td>
+                    <a href="{{ path('catalogue_livres', {'id': catalogue.id}) }}">afficher les livre</a>
+                    <a href="{{ path('catalogue_show', {'id': catalogue.id}) }}">afficher</a>
+                    <a href="{{ path('catalogue_edit', {'id': catalogue.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">aucune information</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('catalogue_new') }}">Nouveau catalogue</a> 
+{% endblock %}
